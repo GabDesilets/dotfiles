@@ -1,0 +1,26 @@
+[user] # as default, personal needs
+    email = gabdesilets@gmail.com
+    name = Gabriel Desilets
+
+[alias]
+ 	c = commit -m
+	a = add -u
+	st = status --untracked-files=all
+	co = checkout
+	rc = rebase --continue
+	rs = rebase --skip
+	ra = rebase --abort
+	cm = checkout master
+	br = branch -vv
+	cp = cherry-pick
+	rollback = reset --soft HEAD^1
+	sw = switch
+  show-merge = log --pretty=format:"%Cgreen %ad %Cred% %H %Creset% %s " --color  --all --not prod --grep=$1 -i --date=iso | sort | awk '{printf ("%s %s #%s %s \n", "git cherry-pick", $5, $2, $3)}'
+
+[log]
+	date = local
+[pull]
+	rebase = true
+
+[includeIf "gitdir:~/plive/"] #plive repos saw as plive/* 
+    path = .gitconfig_plive	

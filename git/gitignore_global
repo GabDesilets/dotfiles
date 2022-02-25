@@ -1,0 +1,26 @@
+# Vim
+.local.vimrc
+.lvimrc
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+
+# Node
+node_modules
+npm-debug.log
+
+
+# Environment
+.env
+.env.dev.*
+.env.*.local
+
+# Jetbrains
+.idea/
+*.iml
+
+
+# Docker
+.docker/
