@@ -1,0 +1,102 @@
+{
+    // Editor settings
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.fontSize": 14,
+    "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.folding": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+    "editor.rulers": [120],
+    "editor.glyphMargin": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.overviewRulerBorder": false,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "workbench.startupEditor": "none",
+
+    // Language-specific settings
+    "rubyLsp.formatter": "syntax_tree",
+    "rubyLsp.rubyVersionManager": "asdf",
+    "ruby lsp.trace.server": "verbose",
+    "[ruby]": {
+        "editor.wordSeparators": "`~@#$%^&*()-=+[{]}\\|;:'\",.<>/",
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ],
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "code-runner.executorMap": {
+        // ... your executor map settings ...
+    },
+
+    // Visual settings
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff4081",
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.noFolderBackground" : "#212121",
+        "statusBar.debuggingBackground": "#263238"
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#2ea542"
+    },
+    "terminal.external.linuxExec": "iTerm2",
+    "terminal.external.osxExec": "Iterm2.app",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, MesloLGS NF",
+    "terminal.integrated.fontWeight": "normal",
+
+    // Other settings
+    "extensions.ignoreRecommendations": true,
+    "eslint.nodeEnv": "development",
+    "security.workspace.trust.emptyWindow": false,
+    "security.workspace.trust.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "eslint.validate": [
+        "javascript"
+    ],
+    "stylelint.enable": true,
+    "stylelint.validate": ["css", "scss"],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "search.exclude": {
+        "**/build": true
+    },
+    "gitlens.hovers.currentLine.over": "line",
+    "workbench.editor.empty.hint": "hidden",
+    "window.zoomLevel": 1,
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.sideBar.location": "right",
+    "editor.stickyTabStops": true,
+    "editor.stickyScroll.enabled": false
+}

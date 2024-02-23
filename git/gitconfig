@@ -22,5 +22,3 @@
 [pull]
 	rebase = true
 
-[includeIf "gitdir:~/plive/"] #plive repos saw as plive/* 
-    path = .gitconfig_plive	
