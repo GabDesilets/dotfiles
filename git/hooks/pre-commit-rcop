@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Redirect output to stderr.
+exec 1>&2
+
+echo "running rubocop pre-commit hook"
+# Get the list of staged files that are added or modified.
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep "\.rb$")
+
+if [ "$STAGED_FILES" = "" ]; then
+  exit 0
+fi
+
+# Run RuboCop on the staged files.
+rubocop_results=$(bin/rubocop $STAGED_FILES)
+
+# If RuboCop has offenses, output them and exit with a non-zero status to block the commit.
+if echo "$rubocop_results" | grep -q "Offenses:"; then
+  echo "$rubocop_results"
+  exit 1
+fi
+
+# No offenses, let the commit proceed.
+exit 0

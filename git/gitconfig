@@ -1,9 +1,11 @@
 [user] # as default, personal needs
-    email = gabdesilets@gmail.com
+    email = gabriel.desilets@gsoft.com
     name = Gabriel Desilets
+    signingkey = # TODO
 
 [alias]
- 	c = commit -m
+ 	c = commit
+	po = push origin
 	a = add -u
 	st = status --untracked-files=all
 	co = checkout
@@ -15,17 +17,27 @@
 	cp = cherry-pick
 	rollback = reset --soft HEAD^1
 	sw = switch
-	show-merge = log --pretty=format:"%Cgreen %ad %Cred% %H %Creset% %s " --color  --all --not prod --grep=$1 -i --date=iso | sort | awk '{printf ("%s %s #%s %s \n", "git cherry-pick", $5, $2, $3)}'
 	rbi = "!f() { git rebase -i HEAD~$1; }; f"
-
-[log]
-	date = local
-
-[pull]
-	rebase = true
+	show-merge = log --pretty=format:"%Cgreen %ad %Cred% %H %Creset% %s " --color  --all --not prod --grep=$1 -i --date=iso | sort | awk '{printf ("%s %s #%s %s \n", "git cherry-pick", $5, $2, $3)}'
+	fuckit = !git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"
 
 [core]
 	editor = nvim
 
 [color]
 	ui = true
+
+[commit]
+	template = /Users/gabriel.desilets/.gitmessage
+	gpgsign = true
+
+[log]
+	date = local
+[pull]
+	rebase = true
+
+[credential]
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

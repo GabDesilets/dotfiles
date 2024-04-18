@@ -32,6 +32,8 @@
     "ruby lsp.trace.server": "verbose",
     "[ruby]": {
         "editor.wordSeparators": "`~@#$%^&*()-=+[{]}\\|;:'\",.<>/",
+        // TODO Reactivate when lsp figure out how to format ruby code
+        //"editor.defaultFormatter": "Shopify.ruby-lsp",
         "editor.defaultFormatter": "Shopify.ruby-lsp",
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -98,5 +100,7 @@
     "git.openRepositoryInParentFolders": "always",
     "workbench.sideBar.location": "right",
     "editor.stickyTabStops": true,
-    "editor.stickyScroll.enabled": false
+    "editor.stickyScroll.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+
 }

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+
+if [ "$COMMIT_SOURCE" != "message" ]; then
+    BRANCH_NAME=$(git symbolic-ref --short HEAD)
+    BRANCH_PREFIX=$(echo $BRANCH_NAME | cut -d '/' -f 1)
+    JIRA_TICKET_ID=$(echo $BRANCH_NAME | awk -F '[/-]' '{print $2"-"$3}')
+    COMMIT_MSG="${JIRA_TICKET_ID}:${BRANCH_PREFIX}"
+
+    # Save the current commit message
+    TEMP=$(cat $COMMIT_MSG_FILE)
+
+    # Prepend the new message to the existing one
+    echo -e "$COMMIT_MSG\n$TEMP" > $COMMIT_MSG_FILE
+fi

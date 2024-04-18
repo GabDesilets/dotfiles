@@ -1,0 +1,14 @@
+#!/bin/sh
+
+fancy_echo "Adding personal  Homebrew formulae ..."
+
+brew bundle --file=- <<EOF
+brew "go"
+brew "ngrok"
+brew "watch"
+brew "jq"
+brew "docker"
+EOF
+
+fancy_echo "Cleaning up old Homebrew formulae ..."
+brew cleanup

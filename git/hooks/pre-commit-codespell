@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "running codespell hook"
+
+# Run codespell on added, modified, and changed files
+files=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -n "$files" ]; then
+    codespell --check-filenames --quiet-level=2 $files
+
+    if [ $? -ne 0 ]; then
+        echo "codespell detected issues. Commit aborted."
+        exit 1
+    fi
+fi
+
+exit 0

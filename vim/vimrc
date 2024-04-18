@@ -1,9 +1,8 @@
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
-" Allow cursor keys in insert mode
-set esckeys
-
-
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
+
+set number                     " Show current line number
+set relativenumber             " Show relative line numbers
