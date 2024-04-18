@@ -12,3 +12,33 @@ EOF
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
+
+fancy_echo "Installing VSCode extensions ..."
+
+code --install-extension chadalen.vscode-jetbrains-icon-theme
+code --install-extension donjayamanne.githistory
+code --install-extension eamodio.gitlens
+code --install-extension formulahendry.code-runner
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+code --install-extension github.github-vscode-theme
+code --install-extension golang.go
+code --install-extension harryhopkinson.vim-theme
+code --install-extension isudox.vscode-jetbrains-keybindings
+code --install-extension koichisasada.vscode-rdbg
+code --install-extension miguel-savignano.ruby-symbols
+code --install-extension mikestead.dotenv
+code --install-extension ms-dotnettools.csdevkit
+code --install-extension ms-dotnettools.csharp
+code --install-extension ms-dotnettools.vscode-dotnet-runtime
+code --install-extension ms-dotnettools.vscodeintellicode-csharp
+code --install-extension ms-vscode.makefile-tools
+code --install-extension ruby-syntax-tree.vscode-syntax-tree
+code --install-extension shopify.ruby-extensions-pack
+code --install-extension shopify.ruby-lsp
+code --install-extension shopify.vscode-shadowenv
+code --install-extension sorbet.sorbet-vscode-extension
+code --install-extension tomphilbin.gruvbox-themes
+code --install-extension vscodevim.vim
+
+fancy_echo "VSCode extensions installed."
