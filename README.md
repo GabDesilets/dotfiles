@@ -18,3 +18,4 @@ dans _vos_ dotfiles.
 - [startship.rs](https://starship.rs/guide/)
 - [DBeaver](https://dbeaver.io/download/)
 - [Docker](https://docs.docker.com/desktop/install/mac-install/)
+- [Dotnet](https://dotnet.microsoft.com/en-us/download/dotnet)
