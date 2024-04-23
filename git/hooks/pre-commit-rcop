@@ -5,7 +5,7 @@ exec 1>&2
 
 echo "running rubocop pre-commit hook"
 # Get the list of staged files that are added or modified.
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep "\.rb$")
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep "\.rb$"| grep -v "db/schema.rb")
 
 if [ "$STAGED_FILES" = "" ]; then
   exit 0
