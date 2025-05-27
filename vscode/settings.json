@@ -28,12 +28,14 @@
 
     // Language-specific settings
     "rubyLsp.formatter": "syntax_tree",
-    "rubyLsp.rubyVersionManager": "asdf",
+    "rubyLsp.rubyVersionManager": {
+        "identifier": "asdf"
+    },
     "ruby lsp.trace.server": "verbose",
+    "rubyLsp.customRubyCommand": "~/.asdf/shims/ruby",
     "[ruby]": {
         "editor.wordSeparators": "`~@#$%^&*()-=+[{]}\\|;:'\",.<>/",
         // TODO Reactivate when lsp figure out how to format ruby code
-        //"editor.defaultFormatter": "Shopify.ruby-lsp",
         "editor.defaultFormatter": "Shopify.ruby-lsp",
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -52,7 +54,9 @@
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
-        }
+        },
+        "gopls": { "ui.semanticTokens": true }
+
     },
     "code-runner.executorMap": {
         // ... your executor map settings ...
@@ -73,7 +77,8 @@
     "terminal.external.linuxExec": "iTerm2",
     "terminal.external.osxExec": "Iterm2.app",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontFamily": "FiraMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 14,
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, MesloLGS NF",
     "terminal.integrated.fontWeight": "normal",
 
@@ -102,5 +107,50 @@
     "editor.stickyTabStops": true,
     "editor.stickyScroll.enabled": false,
     "go.toolsManagement.autoUpdate": true,
+
+    "local-history.daysLimit":  5 , // A day number to purge local history. (0: no purge)
+    "local-history.maxDisplay": 10,  // A max files to display with local history commands
+    "local-history.saveDelay":   0 , // A delay in seconds to save file in local history. {0: no delay}
+    // "local-history.dateLocale": ,    // The locale to use when displaying date (e.g.: "fr-CH" or "en-GB" or ...)
+
+       // Specify another location for .history folder (null: use workspaceFolder)
+        // This settings must be an absolute path.
+
+        // You can start your path with:
+        // ${workspaceFolder}: current workspace folder
+        //     e.g. ${workspaceFolder}/.vscode to save in each workspace folder .vscode/.history
+        // ${workspaceFolder: index}: specific workspace index
+        //     e.g. workspace folders A, B, C. But save always in A/.history => ${workspaceFolder: 0}
+
+        // Your can also use specific variable in path:
+        // - %variable%: an environnement variable (e.g. %AppData%)
+        // - ~: the home directory (linux)
+
+    //"local-history.absolute": // Save absolute or relative path in local-history.path
+        // true:  (absolute) // <local-history.path>/.history/<absolutePath>
+        // false: (relative) // (default) <local-history.path>/.history/<workspaceFolder.basename>/<relativePath>
+
+    // "local-history.enabled":
+    //     0: Never     // Possibillity to disabled the extension for some project
+    //     1: Always    // (default) Save also single file with no workspaceFolder ("local-history.path" must be defined)
+    //     2: Workspace // Save only files within workspaceFolder
+
+    "local-history.exclude": [
+        "**/.env",
+        "**/.env.*.local",
+        "**/log/**",
+        "**/tmp/**"
+    ],
+    "github.copilot.editor.enableAutoCompletions": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "auto",
+    "makefile.configureOnOpen": false,
+    "workbench.panel.showLabels": false,
+    "githubPullRequests.terminalLinksHandler": "github",
+    "githubPullRequests.pullBranch": "never", // Files or folders to not save
+        // (default) ['**/.history/**', '**/.vscode**', '**/node_modules/**', '**/typings/**', '**/out/**']
+
+    // "local-history.treeLocation": // Specify a location for tree view
+    //     explorer (default): // Show tree in Explorer item
+    //     localHistory:       // Show tree in a special active bar item
 
 }

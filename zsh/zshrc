@@ -29,6 +29,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PGGSSENCMODE="disable"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 eval "$(starship init zsh)"
-
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 export PATH="$HOME/.bin:$PATH"

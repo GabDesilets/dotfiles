@@ -1,8 +1,8 @@
 # Local aliases
 # --------------------------------------
-alias ls="exa --long --time-style=long-iso --git --group-directories-first --header --links"
+alias ls="eza --long --time-style=long-iso --git --group-directories-first --header --links"
 alias ll='ls -la'
-alias tree='exa -T'
+alias tree='eza -T'
 alias cat='bat'
 alias c='clear'
 alias g='git'
@@ -25,4 +25,6 @@ alias tml='tmux ls'
 alias tmns='tmux new-session -s'
 alias tmka='tmux kill-session -a'
 
-
+# Random shortcut
+# -------------------------------------
+alias fk1="kill -KILL %1"
