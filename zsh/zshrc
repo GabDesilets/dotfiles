@@ -8,28 +8,28 @@ source $HOME/dev/dotfiles/zsh/config/aliases.zsh
 source $HOME/dev/dotfiles/zsh/config/suggestions.zsh
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_ITERM2=true
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-completions zsh-syntax-highlighting asdf)
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-  autoload -Uz compinit
-  compinit
-fi
+plugins=(git docker docker-compose zsh-completions zsh-syntax-highlighting asdf zsh-history-substring-search)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-# export PATH="/Users/gabriel.desilets/Library/Python/3.9/bin:$PATH"
-# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-# export DOTNET_ROOT=$HOME/dotnet
-# export PATH=$PATH:$HOME/dotnet
+autoload -Uz compinit && compinit
+function exists { which $1 &> /dev/null }
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:$HOME/dotnet
 export PGGSSENCMODE="disable"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-eval "$(starship init zsh)"
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 export PATH="$HOME/.bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export BUNDLER_EDITOR="code"
+eval "$(starship init zsh)"
+source <(fzf --zsh)
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
